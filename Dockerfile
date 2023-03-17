@@ -9,6 +9,7 @@ RUN apt-get update && \
     mkdir /var/run/sshd && \
     useradd -m -d /home/ubuntu -s /bin/bash ubuntu && \
     touch /home/ubuntu/.bashrc && \
+    touch /home/ubuntu/.profile && \
     echo 'ubuntu:ubuntuP@ssword123' | chpasswd && \
     rm -rf /var/lib/apt/lists/*
 
