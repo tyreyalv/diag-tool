@@ -14,7 +14,8 @@ RUN apt-get update && \
     touch /home/ubuntu/.bashrc && \
     touch /home/ubuntu/.profile && \
     echo 'ubuntu:ubuntuP@ssword123' | chpasswd && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/*
 
 RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
     sed -i 's/PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config && \
