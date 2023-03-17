@@ -4,7 +4,10 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
-    apt-get install -y software-properties-common dnsutils openssh-server && \
+    apt-get install -y --no-install-recommends \
+      -o Dir::Cache::archives="/tmp" \
+      -o Dir::Cache="/tmp" \
+      software-properties-common dnsutils openssh-server && \
     apt-get clean && \
     mkdir /var/run/sshd && \
     useradd -m -d /home/ubuntu -s /bin/bash ubuntu && \
