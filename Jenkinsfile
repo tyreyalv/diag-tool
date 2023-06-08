@@ -60,7 +60,7 @@ spec:
                 container(name: 'kaniko', shell: '/busybox/sh') {
                     withEnv(['PATH+EXTRA=/busybox']) {
                         sh '''#!/busybox/sh
-            /kaniko/executor -f /Dockerfile -c `pwd` --destination=$REGISTRY/jenkins/$repoName:$GIT_BRANCH
+            /kaniko/executor -f /Dockerfile -c `pwd` --destination=$HARBOR/jenkins/$repoName:$GIT_BRANCH
             '''
                     }
                 }
