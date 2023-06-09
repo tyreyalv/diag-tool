@@ -46,12 +46,6 @@ spec:
                     env.repoName = getRepoName()
                 }
             }
-            post {
-                always {
-                    //echo 'Build Started for '
-                    notifyBuild('STARTED')
-                }
-            }
         }
         //stage('Run Code Tests') {
         //}
