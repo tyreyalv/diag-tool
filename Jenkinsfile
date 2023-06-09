@@ -65,15 +65,6 @@ spec:
                     }
                 }
             }
-            post {
-                success {
-                    //echo 'Build Started for '
-                    notifyBuild('SUCCESSFUL')
-                }
-                failure{
-                    notifyBuild("FAILED")
-                }
-            }
         }
     }
 }
